@@ -1,0 +1,60 @@
+{
+  "name": "distrobox-reveal-in-explorer",
+  "displayName": "Distrobox Reveal in File Explorer",
+  "description": "Reveals the current file or folder in the host's file explorer when running inside Distrobox.",
+  "version": "0.0.1",
+  "publisher": "local",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "distrobox-reveal.reveal",
+        "title": "Reveal in Host Explorer",
+        "icon": "$(folder-opened)"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "distrobox-reveal.reveal",
+          "group": "navigation",
+          "when": "resourceScheme == file"
+        }
+      ],
+      "editor/title/context": [
+        {
+          "command": "distrobox-reveal.reveal",
+          "group": "navigation",
+          "when": "resourceScheme == file"
+        }
+      ],
+      "editor/context": [
+        {
+            "command": "distrobox-reveal.reveal",
+            "group": "navigation",
+            "when": "resourceScheme == file"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.96.0",
+    "@types/node": "20.x",
+    "typescript": "^5.3.3"
+  }
+}
