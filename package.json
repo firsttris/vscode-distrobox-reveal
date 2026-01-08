@@ -5,7 +5,7 @@
   "version": "0.0.1",
   "publisher": "firsttris",
   "author": "Tristan Teufel",
-    "repository": {
+  "repository": {
     "type": "git",
     "url": "https://github.com/firsttris/vscode-distrobox-reveal.git"
   },
@@ -43,9 +43,9 @@
       ],
       "editor/context": [
         {
-            "command": "distrobox-reveal.reveal",
-            "group": "navigation",
-            "when": "resourceScheme == file"
+          "command": "distrobox-reveal.reveal",
+          "group": "navigation",
+          "when": "resourceScheme == file"
         }
       ]
     }
