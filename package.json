@@ -5,6 +5,10 @@
   "version": "0.0.1",
   "publisher": "firsttris",
   "author": "Tristan Teufel",
+    "repository": {
+    "type": "git",
+    "url": "https://github.com/firsttris/vscode-distrobox-reveal.git"
+  },
   "icon": "folder.png",
   "engines": {
     "vscode": "^1.96.0"
