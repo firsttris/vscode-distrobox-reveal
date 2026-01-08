@@ -3,7 +3,9 @@
   "displayName": "Distrobox Reveal in File Explorer",
   "description": "Reveals the current file or folder in the host's file explorer when running inside Distrobox.",
   "version": "0.0.1",
-  "publisher": "local",
+  "publisher": "firsttris",
+  "author": "Tristan Teufel",
+  "icon": "folder.png",
   "engines": {
     "vscode": "^1.96.0"
   },
