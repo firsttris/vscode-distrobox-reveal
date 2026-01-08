@@ -48,7 +48,7 @@ If a file is selected, it opens the parent directory. If a directory is selected
 ## Building from source
 
 ```bash
-git clone https://github.com/yourusername/vscode-distrobox-reveal.git
+git clone git@github.com:firsttris/vscode-distrobox-reveal.git
 cd vscode-distrobox-reveal
 npm install
 npm run compile
