@@ -57,12 +57,14 @@
     "pretest": "npm run compile && npm run lint",
     "lint": "eslint src --ext ts",
     "test": "node ./out/test/runTest.js",
-    "vsce:publish": "vsce publish patch -m '%s [skip ci]' && git push"
+    "package": "vsce package",
+    "publish": "vsce publish $VERSION -m '%s [skip ci]' && ovsx publish -p $OVSX_PAT"
   },
   "devDependencies": {
     "@types/vscode": "^1.96.0",
-    "@types/node": "20.x",
-    "typescript": "^5.3.3",
-    "@vscode/vsce": "^3.2.1"
+    "@types/node": "25.x",
+    "typescript": "^5.9.3",
+    "@vscode/vsce": "^3.7.1",
+    "ovsx": "^0.10.8"
   }
 }
