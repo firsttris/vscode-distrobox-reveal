@@ -1,66 +1,129 @@
-# Distrobox Reveal in File Explorer
+<div align="center">
 
-This is a Visual Studio Code extension designed for developers working inside **[Distrobox](https://distrobox.it/)** containers. 
+# 📂 Distrobox Reveal in File Explorer
 
-It solves a common annoyance: when you use VS Code connected to a **Distrobox** container, the standard "Reveal in File Explorer" option is often **missing** or unavailable.
+<img src="folder.png" alt="Distrobox Reveal" width="128" height="128">
 
-**Distrobox Reveal** adds this missing functionality back, allowing you to open the current file or folder using your **Host OS's** file manager seamlessly.
+<strong>Open files in your host's file manager from inside Distrobox containers!</strong>
 
-## Features
+<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
+<a href="https://code.visualstudio.com/"><img src="https://img.shields.io/badge/VS%20Code-1.85.0+-blue.svg" alt="VS Code"></a>
+<a href="https://distrobox.it/"><img src="https://img.shields.io/badge/Distrobox-Compatible-green.svg" alt="Distrobox"></a>
 
-- **📂 Seamless Integration**: Open the current file's location directly in your host's default file manager (Nautilus, Dolphin, Thunar, etc.).
-- **🖱️ Context Menus**: right-click on files in the Explorer sidebar or editor tabs.
-- **⌨️ Command Palette**: Access the feature via "Reveal in Host Explorer".
-- **🐧 Native Feel**: Uses `distrobox-host-exec` to bridge the container gap without complex setup.
+---
 
-## Requirements
+**[Overview](#-overview) • [Features](#-features) • [Usage](#-usage) • [Requirements](#-requirements) • [Installation](#-installation) • [Contributing](#-contributing)**
 
-To use this extension effectively, your environment must meet these criteria:
+---
+</div>
 
-1.  **Distrobox**: You are running VS Code inside a Distrobox container.
-2.  **distrobox-host-exec**: This utility is pre-installed in standard Distrobox containers. It must be obtainable in your `$PATH`.
-3.  **Host Environment**: A Linux host with `xdg-open` configured (standard on almost all Linux desktops like GNOME, KDE, XFCE).
+## 🎯 Overview
 
-## How to specific usage
+A lightweight VS Code extension designed for developers working inside **[Distrobox](https://distrobox.it/)** containers. It restores the missing "Reveal in File Explorer" functionality, allowing you to open files and folders in your **host OS's** file manager seamlessly.
 
-The extension provides a new command: **"Reveal in Host Explorer"**.
+> ✨ **Why use this extension?** When using VS Code connected to a Distrobox container, the standard "Reveal in File Explorer" option is often missing or unavailable. This extension bridges that gap by using `distrobox-host-exec` to open files in your host's file manager (Nautilus, Dolphin, Thunar, etc.) with a single click.
 
-You can access it via:
-*   **Explorer Context Menu**: Right-click any file or folder in the VS Code side bar.
-*   **Editor Tab Context Menu**: Right-click the tab of any open file.
-*   **Command Palette**: Press `Ctrl+Shift+P` (or `Cmd+Shift+P`) and type "Reveal in Host Explorer".
+## ✨ Features
 
-### How it works under the hood
+| 🚀 Quick Access | 🔧 Flexible Integration |
+| --- | --- |
+| 🖱️ **Context Menus** - Right-click on files in Explorer sidebar or editor tabs | 📂 **Any File Manager** - Works with Nautilus, Dolphin, Thunar, and more |
+| ⌨️ **Command Palette** - Access via "Reveal in Host Explorer" | 🐧 **Native Feel** - Seamless bridge between container and host |
+| 📁 **Files & Folders** - Works with both files and directories | ⚡ **Zero Config** - Uses standard `distrobox-host-exec` |
+
+### Key Highlights
+
+- ✅ **Zero Configuration** - Works out-of-the-box with standard Distrobox setups
+- 🎨 **Seamless Integration** - Appears in native VS Code context menus
+- 🐧 **Linux Native** - Built specifically for the Linux + Distrobox workflow
+- ⚡ **Lightweight** - Minimal performance impact on your editor
+
+## 🚀 Usage
+
+The extension provides the command: **"Reveal in Host Explorer"**
+
+### Access Methods
+
+| Method | How to Use |
+| --- | --- |
+| 📁 **Explorer Context Menu** | Right-click any file or folder in the VS Code sidebar |
+| 📑 **Editor Tab Context Menu** | Right-click the tab of any open file |
+| ⌨️ **Command Palette** | Press `Ctrl+Shift+P` and type "Reveal in Host Explorer" |
+
+<details>
+<summary>🔧 How it works under the hood</summary>
+
 When triggered, the extension executes the following command in your container:
 
 ```bash
 distrobox-host-exec xdg-open "/absolute/path/to/directory"
 ```
 
-If a file is selected, it opens the parent directory. If a directory is selected, it opens that directory directly.
+- If a **file** is selected → opens the parent directory
+- If a **directory** is selected → opens that directory directly
 
-## Installation
+</details>
 
-1.  Open VS Code inside your Distrobox.
-2.  Search for "Distrobox Reveal" in the Extensions view (pending publication).
-3.  Or install the `.vsix` manually if building from source.
+## 📋 Requirements
 
-## Building from source
+To use this extension effectively, your environment must meet these criteria:
 
-```bash
-git clone git@github.com:firsttris/vscode-distrobox-reveal.git
-cd vscode-distrobox-reveal
-npm install
-npm run compile
+| Requirement | Description |
+| --- | --- |
+| 🐧 **Distrobox** | You are running VS Code inside a Distrobox container |
+| 🔧 **distrobox-host-exec** | Pre-installed in standard Distrobox containers (must be in `$PATH`) |
+| 🖥️ **Host Environment** | Linux host with `xdg-open` configured (GNOME, KDE, XFCE, etc.) |
+
+> ⚠️ **Note:** This extension assumes 1:1 path mapping between host and container (the default Distrobox behavior with home directory mounting). Custom internal paths that don't exist on the host won't work.
+
+### 🔑 Important: Remote User Configuration
+
+To ensure VS Code connects to the Distrobox with your host user, you need to configure the `remoteUser` setting:
+
+1. Open the Command Palette (`Ctrl+Shift+P`)
+2. Search for **"Dev Containers: Open Container Configuration File"**
+3. Add the following line to the configuration:
+
+```json
+"remoteUser": "${localEnv:USER}"
 ```
 
-## Known Issues
+Without this setting, VS Code may connect as root, which prevents `xdg-open` from accessing your host's desktop session (D-Bus, display server) and the file manager won't open.
 
-*   This extension is specifically for **Linux** users using Distrobox.
-*   It assumes the path mapping between host and container is 1:1 (which is the default and recommended way Distrobox works, mounting the home directory). If you are using custom internal paths that do not exist on the host, `xdg-open` on the host will naturally fail to find them.
+## 📦 Installation
 
-## Release Notes
+### From VS Code Marketplace
 
-### 0.0.1
+1. Open VS Code inside your Distrobox
+2. Go to Extensions view (`Ctrl+Shift+X`)
+3. Search for **"Distrobox Reveal"**
+4. Click **Install**
 
-Initial release of Distrobox Reveal in File Explorer.
+### Manual Installation
+
+Install the `.vsix` file directly if building from source.
+
+## 🤝 Contributing
+
+Want to contribute? We'd love your help!
+
+### 🚀 Development Setup
+
+1. **Clone the repository**
+2. **Install dependencies**
+3. **Start development**
+   - Press `F5` or go to Run → Start Debugging
+   - A new VS Code window will open with the extension loaded
+
+4. **Build the extension**
+   ```bash
+   npm run compile
+   ```
+
+<div align="center">
+
+**Made with ❤️ for the Linux community**
+
+⭐ Star us on [GitHub](https://github.com/firsttris/vscode-distrobox-reveal) • 🐛 [Report a Bug](https://github.com/firsttris/vscode-distrobox-reveal/issues) • 💡 [Request a Feature](https://github.com/firsttris/vscode-distrobox-reveal/issues)
+
+</div>
