@@ -120,10 +120,13 @@ Want to contribute? We'd love your help!
    npm run compile
    ```
 
+---
+
 <div align="center">
 
-**Made with ❤️ for the Linux community**
+⭐ Like Distrobox Reveal? A [star on GitHub](https://github.com/firsttris/vscode-distrobox-reveal) helps others find it.<br>
+🐛 [Report a bug](https://github.com/firsttris/vscode-distrobox-reveal/issues/new?template=bug_report.md) · 💡 [Request a feature](https://github.com/firsttris/vscode-distrobox-reveal/issues/new?template=feature_request.md)
 
-⭐ Star us on [GitHub](https://github.com/firsttris/vscode-distrobox-reveal) • 🐛 [Report a Bug](https://github.com/firsttris/vscode-distrobox-reveal/issues) • 💡 [Request a Feature](https://github.com/firsttris/vscode-distrobox-reveal/issues)
+<sub>License: <a href="LICENSE">MIT</a> · © Tristan Teufel and contributors</sub>
 
 </div>
