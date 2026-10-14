@@ -7,6 +7,9 @@
 <strong>Open files in your host's file manager from inside Distrobox containers!</strong>
 
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
+<a href="https://github.com/firsttris/vscode-distrobox-reveal/actions/workflows/ci.yml"><img src="https://github.com/firsttris/vscode-distrobox-reveal/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+<a href="https://marketplace.visualstudio.com/items?itemName=firsttris.distrobox-reveal-in-explorer"><img src="https://vsmarketplacebadges.dev/version-short/firsttris.distrobox-reveal-in-explorer.svg" alt="VS Marketplace Version"></a>
+<a href="https://marketplace.visualstudio.com/items?itemName=firsttris.distrobox-reveal-in-explorer"><img src="https://vsmarketplacebadges.dev/installs-short/firsttris.distrobox-reveal-in-explorer.svg" alt="Installs"></a>
 <a href="https://code.visualstudio.com/"><img src="https://img.shields.io/badge/VS%20Code-1.85.0+-blue.svg" alt="VS Code"></a>
 <a href="https://distrobox.it/"><img src="https://img.shields.io/badge/Distrobox-Compatible-green.svg" alt="Distrobox"></a>
 
