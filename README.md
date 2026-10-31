@@ -10,7 +10,7 @@
 <a href="https://github.com/firsttris/vscode-distrobox-reveal/actions/workflows/ci.yml"><img src="https://github.com/firsttris/vscode-distrobox-reveal/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
 <a href="https://marketplace.visualstudio.com/items?itemName=firsttris.distrobox-reveal-in-explorer"><img src="https://vsmarketplacebadges.dev/version-short/firsttris.distrobox-reveal-in-explorer.svg" alt="VS Marketplace Version"></a>
 <a href="https://marketplace.visualstudio.com/items?itemName=firsttris.distrobox-reveal-in-explorer"><img src="https://vsmarketplacebadges.dev/installs-short/firsttris.distrobox-reveal-in-explorer.svg" alt="Installs"></a>
-<a href="https://code.visualstudio.com/"><img src="https://img.shields.io/badge/VS%20Code-1.85.0+-blue.svg" alt="VS Code"></a>
+<a href="https://code.visualstudio.com/"><img src="https://img.shields.io/badge/VS%20Code-1.96.0+-blue.svg" alt="VS Code"></a>
 <a href="https://distrobox.it/"><img src="https://img.shields.io/badge/Distrobox-Compatible-green.svg" alt="Distrobox"></a>
 
 ---
