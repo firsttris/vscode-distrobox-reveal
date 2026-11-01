@@ -11,7 +11,7 @@
   },
   "icon": "folder.png",
   "engines": {
-    "vscode": "^1.140.0"
+    "vscode": "^1.144.0"
   },
   "categories": [
     "Other"
@@ -61,7 +61,7 @@
     "postversion": "git push --follow-tags"
   },
   "devDependencies": {
-    "@types/vscode": "^1.140.0",
+    "@types/vscode": "^1.144.0",
     "@types/node": "26.x",
     "typescript": "^7.0.0",
     "@vscode/vsce": "^4.0.0",
