@@ -113,14 +113,17 @@ Want to contribute? We'd love your help!
 ### 🚀 Development Setup
 
 1. **Clone the repository**
-2. **Install dependencies**
+2. **Install dependencies** with [Bun](https://bun.sh) (the version in `packageManager` in `package.json`)
+   ```bash
+   bun install
+   ```
 3. **Start development**
    - Press `F5` or go to Run → Start Debugging
    - A new VS Code window will open with the extension loaded
 
 4. **Build the extension**
    ```bash
-   npm run compile
+   bun run package   # out/ and the .vsix
    ```
 
 ---

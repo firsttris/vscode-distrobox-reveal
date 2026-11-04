@@ -1,0 +1,4 @@
+# Left out of the .vsix besides vsce's defaults (which already drop package-lock.json):
+# what came with the move to Bun
+bun.lock
+.vscode/settings.json

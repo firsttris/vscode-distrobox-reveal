@@ -1,0 +1,4 @@
+{
+  // The npm tasks (npm: compile, the preLaunchTask of launch.json) run with Bun
+  "npm.packageManager": "bun"
+}
