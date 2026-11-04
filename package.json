@@ -12,7 +12,7 @@
   "icon": "folder.png",
   "packageManager": "bun@1.4.4",
   "engines": {
-    "vscode": "^1.140.0"
+    "vscode": "^1.144.0"
   },
   "categories": [
     "Other"
