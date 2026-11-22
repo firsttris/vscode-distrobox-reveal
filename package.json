@@ -10,7 +10,7 @@
     "url": "https://github.com/firsttris/vscode-distrobox-reveal.git"
   },
   "icon": "folder.png",
-  "packageManager": "bun@1.4.4",
+  "packageManager": "bun@1.4.5",
   "engines": {
     "vscode": "^1.100.0"
   },
